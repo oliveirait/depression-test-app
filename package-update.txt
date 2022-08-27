@@ -1,0 +1,11 @@
+NPM
+npm install -g npm@latest
+
+NPX
+npm install -g npx
+
+EXPO
+expo update 45.0.0
+
+REACT UPDATE 
+npx react-native upgrade (version ...)
