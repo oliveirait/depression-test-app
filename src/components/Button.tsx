@@ -9,9 +9,10 @@ export function Button( {...rest}: IButtonProps ) {
       h={14}
       borderWidth={0}
       px={20}
-
-
+      
       {...rest} 
     />
   );
 }
+
+

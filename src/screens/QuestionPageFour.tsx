@@ -4,7 +4,7 @@ import { Button } from '../components/Button';
 import { useNavigation } from '@react-navigation/native';
 import { HeadingButton } from '../components/HeadingButton';
 
-export function QuestionPageTwo() {
+export function QuestionPageFour() {
 
   const { navigate, goBack } = useNavigation()
 
@@ -20,13 +20,13 @@ export function QuestionPageTwo() {
     <VStack w={'full'} flex={1} alignItems="center" bg="white" px={8} pt={24} >
 
         <HStack alignItems={'center'} >
-          <HeadingButton pb={5} color={'black'} fontSize={30} > 2 </HeadingButton>
+          <HeadingButton pb={5} color={'black'} fontSize={30} > 4 </HeadingButton>
         </HStack>
 
 
         <HStack flex={1} justifyContent={'center'} alignItems={'flex-end'} pb={10}>
           <Box>
-            <Button onPress={ () => handleNextPage('question_page_three') } mb={2}> 
+            <Button onPress={ () => handleNextPage('question_page_five') } mb={2}> 
               <HeadingButton> PROXIMO </HeadingButton>
             </Button> 
             <Button onPress={ handleGoBack }> 
