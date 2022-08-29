@@ -4,7 +4,7 @@ import { Button } from '../components/Button';
 import { useNavigation } from '@react-navigation/native';
 import { HeadingButton } from '../components/HeadingButton';
 
-export function QuestionPageFive() {
+export function Q5() {
 
   const { goBack } = useNavigation()
 
@@ -13,7 +13,7 @@ export function QuestionPageFive() {
   }
 
   return (
-    <VStack w={'full'} flex={1} alignItems="center" bg="white" px={8} pt={24}>
+    <VStack flex={1} alignItems="center" bg="white" px={8} pt={24}>
 
         <HeadingButton pb={5} color={'black'} fontSize={30}> 5 </HeadingButton>
         
