@@ -15,7 +15,7 @@ export const MainTitle = () => {
 export const MainInfo = () => {
   return (
     <Box>
-        <HeadingButton pb={5} pt={5} color={'black'} fontSize={16}> 
+        <HeadingButton pb={2} pt={2} color={'black'} fontSize={16}> 
             Esta é uma ferramenta de saúde que avalia a gravidade dos sintomas comportamentais e emocionais
             que estão correlacionados a depressão.
         </HeadingButton>
@@ -23,34 +23,35 @@ export const MainInfo = () => {
   );
 }
 
+export const MainOptionsTitle = () => {
+  return (
+      <Box>
+          <HeadingButton pb={2} pt={2} fontSize={16} color={'blue.800'}> 
+              Existem 7 itens que precisam ser pontuados conforme listado abaixo
+              e o teste leva cerca de 1 minuto:
+          </HeadingButton>        
+      </Box>
+  );
+}
+
 export const MainOptions = () => {
     return (
       <Box>
-          <HeadingButton pb={5} pt={5} color={'black'} fontSize={16} fontWeight={'thin'} >
-              0 - NUNCA - Não se aplica a mim de forma alguma {'\n'}
-              1 - ÀS VEZES - Aplica-se a mim em algum grau, ou parte do tempo {'\n'}
-              2 - FREQUENTEMENTE - Aplica-se a mim em um grau considerável, ou boa parte do tempo {'\n'}
-              3 - QUASE SEMPRE- Aplica-se muito a mim, ou na maioria das vezes {'\n'}
+          <HeadingButton pb={2} pt={2} color={'black'} fontSize={16} fontWeight={'thin'}>
+              0 - NUNCA - Não se aplica a mim {'\n'}
+              1 - ÀS VEZES - Aplica-se a mim em algum grau {'\n'}
+              2 - FREQUENTEMENTE - Aplica-se a mim com frequencia {'\n'}
+              3 - QUASE SEMPRE- Aplica-se muito a mim {'\n'}
           </HeadingButton>
       </Box>
     );
   }
 
-export const MainOptionsTitle = () => {
-    return (
-        <Box>
-            <HeadingButton pb={5} pt={5} fontSize={16} color={'blue.800'}> 
-                Existem 7 itens que precisam ser pontuados conforme listado abaixo
-                e o teste leva cerca de 1 minuto:
-            </HeadingButton>        
-        </Box>
-  );
-}
 
 export const MainAlert = () => {
     return (
-      <Box bgColor={'amber.100'} borderRadius={10} p={2} >
-          <HeadingButton pb={5} pt={5} color={'black'} fontSize={16} fontWeight={'light'}>
+      <Box bgColor={'amber.100'} borderRadius={10} borderWidth={0} >
+          <HeadingButton pb={2} pt={2} color={'black'} fontSize={16} fontWeight={'light'}>
               O avaliador aconselha o paciente a considerar a primeira resposta que lhe vier à cabeça.
           </HeadingButton>
       </Box>

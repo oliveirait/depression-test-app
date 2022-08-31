@@ -5,9 +5,9 @@ import { Button } from '../components/Button';
 import { useNavigation } from '@react-navigation/native';
 import { HeadingButton } from '../components/HeadingButton';
 import { Answer0, Answer1, Answer2, Answer3 } from '../components/home/choice';
-import { Ask3 } from '../components/pages/answer';
+import { Ask7 } from '../components/pages/answer';
 
-export function Q3({route}) {
+export function Q7({route}) {
 
   const { navigate, goBack } = useNavigation() 
   const [select, setSelect] = useState('')
@@ -18,7 +18,6 @@ export function Q3({route}) {
     } else {
       console.log(route.params?.res + parseInt(select))
       navigate(pg, { res: route.params?.res + parseInt(select) }) /* Enviando o resultado para proxima página */
-      
     }
   }
 
@@ -35,7 +34,7 @@ export function Q3({route}) {
 <VStack flex={1} justifyContent={'center'} alignItems={'center'} px={5}>
       
       <HStack>
-        <Heading textAlign={'center'}> <Ask3/> </Heading>
+        <Heading textAlign={'center'}> <Ask7/> </Heading>
       </HStack>
       
       <HStack mt={10} justifyContent={'center'} alignItems={'center'}>
@@ -56,7 +55,7 @@ export function Q3({route}) {
               <Button onPress={handleGoBack} m={3}>
                 <HeadingButton> VOLTAR </HeadingButton>
               </Button>
-              <Button onPress={() => handleNextPage('q4')} m={3}>
+              <Button onPress={() => handleNextPage('result')} m={3}>
                 <HeadingButton> PROXIMO </HeadingButton>
             </Button>
           </HStack>

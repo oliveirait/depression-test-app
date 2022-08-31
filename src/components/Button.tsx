@@ -8,10 +8,7 @@ export function Button( {...rest}: IButtonProps ) {
       bg='green.700'
       h={14}
       borderWidth={0}
-      px={20}
-      
-      {...rest} 
-    />
+      {...rest} />
   );
 }
 

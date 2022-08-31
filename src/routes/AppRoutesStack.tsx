@@ -6,13 +6,16 @@ import { Q2 } from '../screens/Q2';
 import { Q3 } from '../screens/Q3';
 import { Q4 } from '../screens/Q4';
 import { Q5 } from '../screens/Q5';
+import { Q6 } from '../screens/Q6';
+import { Q7 } from '../screens/Q7';
+import { Result } from '../screens/Result';
 import { THEME } from '../styles/Theme';
 
 
 const { Navigator, Screen } = createStackNavigator(); 
 const color = THEME
 
-export const AppRoutes = () => {
+export const AppRoutesStack = () => {
 
   return (
     <Navigator initialRouteName="home" 
@@ -22,6 +25,7 @@ export const AppRoutes = () => {
                   headerStyle: { backgroundColor: color.colors.green[700] },
                   headerMode: 'float',
                   headerTintColor: 'white',
+                  animationEnabled: true,
                 }}>
 
         <Screen name="home" component={Home} options={{ headerShown: false}}/>
@@ -30,6 +34,9 @@ export const AppRoutes = () => {
         <Screen name="q3" component={Q3} options={{title: 'Questão 3'}}/>
         <Screen name="q4" component={Q4} options={{title: 'Questão 4'}}/>
         <Screen name="q5" component={Q5} options={{title: 'Questão 5'}}/>
+        <Screen name="q6" component={Q6} options={{title: 'Questão 6'}}/>
+        <Screen name="q7" component={Q7} options={{title: 'Ultima questão'}}/>
+        <Screen name="result" component={Result} options={{ headerShown: false}}/>
 
     </Navigator>
   );
