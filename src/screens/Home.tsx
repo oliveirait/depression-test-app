@@ -5,7 +5,6 @@ import { useNavigation } from '@react-navigation/native';
 import { HeadingButton } from '../components/HeadingButton';
 import { MainTitle, MainInfo, MainOptionsTitle, MainOptions, MainAlert } from '../components/home/main'; 
 
-
 export function Home() {
 
   const { navigate } = useNavigation()
@@ -29,7 +28,7 @@ export function Home() {
 
         <HStack w={'100%'} flex={1} justifyContent={'center'} alignItems={'flex-end'} pb={5}>
           <Button onPress={ () => handleNextPage('q1') }  > 
-            <HeadingButton> INICIAR TESTE </HeadingButton>
+              <HeadingButton> INICIAR TESTE </HeadingButton>
           </Button> 
         </HStack>
 

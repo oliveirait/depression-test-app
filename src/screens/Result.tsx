@@ -1,22 +1,32 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Button, Center, Heading, Link, VStack, Text } from 'native-base';
-import { useFocusEffect, useNavigation } from '@react-navigation/native';
+import { useFocusEffect, useNavigation, CommonActions } from '@react-navigation/native';
 import { Alert } from 'react-native';
 import { HeadingButton } from '../components/HeadingButton';
 
+
 export function Result({route}) {
 
-  const { navigate } = useNavigation()
+  const { navigate, dispatch  } = useNavigation()
 
-  var [res] = useState(route.params?.res)
+  var [res] = useState(route.params?.res);
 
   const handleHomePage = () => {
     navigate('home')
   }
 
+  const resetIndex = () => {
+    dispatch(
+      CommonActions.reset({
+        index: 0,
+        routes: [{ name: 'home' }
+        ]
+      })
+    )
+   }
+
 
   const getInfo = () => {
-   
     if ( res > 13 ) {
       Alert.alert(
         'GRAU EXTREMAMENTE SEVERO',
@@ -48,11 +58,12 @@ export function Result({route}) {
     }
   }
 
-  useFocusEffect(
-    useCallback(()=>{
+    useEffect(() => {
       getInfo()
-    }, [])
-  )
+    }, []) 
+  
+
+  
 
   return (
    <VStack flex={1} alignItems="center" bg="white" px={8} pt={24} >

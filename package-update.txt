@@ -5,7 +5,25 @@ NPX
 npm install -g npx
 
 EXPO
-expo update 45.0.0
+expo update 46
 
 REACT UPDATE 
 npx react-native upgrade (version ...)
+
+expo start --localhost --android
+
+ const justifyContents = [
+    'flex-start',
+    'flex-end',
+    'center',
+    'space-between',
+    'space-around',
+    'space-evenly',
+  ];
+  const alignItemsArr = [
+    'flex-start',
+    'flex-end',
+    'center',
+    'stretch',
+    'baseline',
+  ];
