@@ -2,33 +2,31 @@ import React, { useState } from 'react';
 import { Alert } from 'react-native';
 import { HStack, VStack, FlatList, Heading, Center, Radio, AlertDialog } from 'native-base';
 import { Button } from '../components/Button';
-import { useNavigation, CommonActions } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { HeadingButton } from '../components/HeadingButton';
 import { Answer0, Answer1, Answer2, Answer3 } from '../components/home/choice';
 import { Ask7 } from '../components/pages/answer';
 
-export function Q7({route}) {
+export function Q6({route}) {
 
   const { navigate, goBack } = useNavigation() 
   const [select, setSelect] = useState('')
 
-  const alert = () => {
-    Alert.alert('Resposta necessária', 'Não é possível avançar sem responder a questão')
-   }
-
-  const handleNextPage = (pg: any) => {
+  const handleNextPage = (pg: any) => { 
     if (!select) {
-      alert()
+     alert()
     } else {
       console.log(route.params?.res + parseInt(select))
       navigate(pg, { res: route.params?.res + parseInt(select) }) /* Enviando o resultado para proxima página */
+      
     }
   }
- 
 
   const handleGoBack = () => { goBack() }
 
-  
+  const alert = () => {
+   Alert.alert('Resposta necessária', 'Não é possível avançar sem responder a questão')
+  }
 
   return (
   <VStack flex={1}>
@@ -58,7 +56,7 @@ export function Q7({route}) {
               <Button onPress={handleGoBack} m={3}>
                 <HeadingButton> VOLTAR </HeadingButton>
               </Button>
-          <Button onPress={() => handleNextPage('result') } m={3}>
+              <Button onPress={() => handleNextPage('result')} m={3}>
                 <HeadingButton> PROXIMO </HeadingButton>
             </Button>
           </HStack>

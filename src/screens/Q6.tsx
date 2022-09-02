@@ -5,9 +5,9 @@ import { Button } from '../components/Button';
 import { useNavigation } from '@react-navigation/native';
 import { HeadingButton } from '../components/HeadingButton';
 import { Answer0, Answer1, Answer2, Answer3 } from '../components/home/choice';
-import { Ask6 } from '../components/pages/answer';
+import { Ask5 } from '../components/pages/answer';
 
-export function Q6({route}) {
+export function Q5({route}) {
 
   const { navigate, goBack } = useNavigation() 
   const [select, setSelect] = useState('')
@@ -17,7 +17,7 @@ export function Q6({route}) {
      alert()
     } else {
       console.log(route.params?.res + parseInt(select))
-      navigate(pg, { res: route.params?.res + parseInt(select)}) /* Enviando o resultado para proxima página */
+      navigate(pg, { res: route.params?.res + parseInt(select) }) /* Enviando o resultado para proxima página */
       
     }
   }
@@ -35,7 +35,7 @@ export function Q6({route}) {
 <VStack flex={1} justifyContent={'center'} alignItems={'center'} px={5}>
       
       <HStack>
-        <Heading textAlign={'center'}> <Ask6/> </Heading>
+        <Heading textAlign={'center'}> <Ask5/> </Heading>
       </HStack>
       
       <HStack mt={10} justifyContent={'center'} alignItems={'center'}>

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Heading } from 'native-base';
 
-const length = 24
+const length = 30
 const textAlign = 'center'
 
 export function Ask1() {
     return (
-        <Heading fontSize={length}textAlign={textAlign} >
+        <Heading fontSize={length} textAlign={textAlign} >
             Ultimamente não tenho sentimentos positivos
         </Heading>
     );

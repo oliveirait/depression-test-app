@@ -5,7 +5,7 @@ import { Stack, NativeStack } from './AppRoutes';
 export function AppContainer() {
   return (
     <NavigationContainer>
-      <Stack/>
+      <NativeStack/>
     </NavigationContainer>
   );
 }

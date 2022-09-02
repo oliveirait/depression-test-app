@@ -5,7 +5,7 @@ export function Button( {...rest}: IButtonProps ) {
   return (
     <NativeBaseButton
       w='full'
-      bg='green.700'
+      bg='green.500'
       h={14}
       borderWidth={0}
       {...rest} />
