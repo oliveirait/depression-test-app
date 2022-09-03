@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { Button, Center, Heading, Link, VStack, Text } from 'native-base';
-import { useFocusEffect, useNavigation, CommonActions } from '@react-navigation/native';
+import React, { useEffect, useState } from 'react';
+import { Button, Center, Heading, Link, VStack } from 'native-base';
+import { useNavigation } from '@react-navigation/native';
 import { Alert } from 'react-native';
 import { HeadingButton } from '../components/HeadingButton';
 
@@ -55,24 +55,32 @@ export function Result({route}) {
   
 
   return (
-   <VStack flex={1} alignItems="center" bg="white" px={8} pt={24} >
-    <VStack flex={1} alignItems={'center'} justifyContent={'center'}>
+    <VStack flex={1} bg='white' >
 
-        <Center h={24}>
-          <Heading textAlign={'center'}>Acesse o site Vittude para obter mais informações</Heading>
+        <Center flex={1} mt={'50%'} mb={'50%'}>
+          <Heading mb={10} textAlign={'center'}>
+            Acesse o site Vittude para obter mais informações
+          </Heading>
+
+          <Button>
+          <Link href='https://vittude.com'>
+            
+            <Heading color={'white'}>vittude.com</Heading>
+            
+          </Link>
+          </Button>
+
+          
+          
         </Center>
 
-        <Heading alignItems={'center'} h={10}>
-          <Link href='https://vittude.com' height={10}>vittude.com</Link>
-        </Heading>
         
-        
-        <Button onPress={handleHomePage} m={3}>
-          <HeadingButton > VOLTAR À PAGINA INICIAL </HeadingButton>
+        <Button onPress={handleHomePage} size={14} w={'full'} mt={'50%'}>
+          <HeadingButton > PAGINA INICIAL </HeadingButton>
         </Button>
+
     </VStack>
 
-    
-    </VStack>
+  
   );
 }

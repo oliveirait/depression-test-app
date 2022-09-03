@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Center, Heading, HStack, Image, VStack } from 'native-base';
+import { Box, Center, Divider, Heading, HStack, Image, VStack } from 'native-base';
 import { Button } from '../components/Button';
 import { useNavigation } from '@react-navigation/native';
 import { HeadingButton } from '../components/HeadingButton';
@@ -22,35 +22,27 @@ export function Home() {
         source={logoLoaded} 
         alt={'Depression Test'}
         resizeMode={'contain'}
-        size={150} />
+        size={100} />
     )
   }
 
   return (
-    <VStack w='100%' h='100%' bg='white' >
-
-        <Center pt={24}>
-         <MainTitle/>
-        </Center>
-
-        <VStack px={8} mt={5} justifyContent={'center'} alignItems={'center'} mb={5}>
+      <VStack flex={1} bg='white'>
+    
+        <Center flex={1} mt={'50%'} mb={'1%'}>
+          <MainTitle/>
           { !logoLoaded ? <Loading/> : <Logo/> } 
-        </VStack>
-
-        <VStack flex={1} alignItems="center" px={8} >
           <MainInfo/>
           <MainOptionsTitle/>
           <MainOptions/>
           <MainAlert/>
-        </VStack>
+        </Center>
 
-      <VStack m={5}>
-          <Button onPress={ () => handleNextPage('q1') }  > 
-              <HeadingButton> INICIAR TESTE </HeadingButton>
-          </Button> 
+        <Button onPress={ () => handleNextPage('q1') } mt={'50%'}> 
+          <HeadingButton> INICIAR TESTE </HeadingButton>
+        </Button> 
+
       </VStack>
-
-    </VStack>
- 
+      
   );
 }

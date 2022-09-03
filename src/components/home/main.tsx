@@ -1,67 +1,64 @@
-import { Box, VStack } from 'native-base';
+import { Box, Center, VStack } from 'native-base';
 import React from 'react';
 import { HeadingButton } from '../HeadingButton';
 
-const w = 'full'
+const w = '90%'
+const h = '90%'
+const margin = 2
+const fontzise = 16
 
 export const MainTitle = () => {
     return (
-      <Box>
-          <HeadingButton pb={5} color={'black'} fontSize={30}> 
+      
+        <HeadingButton mt={'10%'} pb={5} color={'black'} fontSize={30}> 
               Teste de Depressão
           </HeadingButton>
-      </Box>
+  
     );
   }
 
 export const MainInfo = () => {
   return (
-    <Box>
-        <HeadingButton pb={2} pt={2} color={'black'} fontSize={16}> 
+
+        <HeadingButton m={margin} pb={2} pt={2} color={'black'} fontSize={fontzise}> 
             Esta é uma ferramenta de saúde que avalia a gravidade dos sintomas comportamentais e emocionais
             que estão correlacionados a depressão.
         </HeadingButton>
-    </Box>
+      
   );
 }
 
 export const MainOptionsTitle = () => {
   return (
-      <Box>
-          <HeadingButton pb={2} pt={2} fontSize={16} color={'blue.800'}> 
+ 
+          <HeadingButton m={margin}   pb={2} pt={2} fontSize={fontzise} color={'blue.800'}> 
               Existem 7 itens que precisam ser pontuados conforme listado abaixo
               e o teste leva cerca de 1 minuto:
           </HeadingButton>        
-      </Box>
+        
   );
 }
 
 export const MainOptions = () => {
     return (
-      <VStack mb={10} mt={10}>
 
-          <HeadingButton w={w}  color={'black'} fontSize={16} fontWeight={'thin'}>
-              
+          <HeadingButton m={margin}  color={'black'} fontSize={fontzise} fontWeight={'bold'}>
               0 - NUNCA - Não se aplica a mim {'\n'}
               1 - ÀS VEZES - Aplica-se a mim em algum grau {'\n'}
               2 - FREQUENTEMENTE - Aplica-se a mim com frequencia {'\n'}
-              3 - QUASE SEMPRE - Aplica-se muito a mim 
-
+              3 - QUASE SEMPRE - Aplica-se muito a mim {'\n'}
           </HeadingButton>
-
-          
-      </VStack>
     );
   }
 
 
 export const MainAlert = () => {
     return (
-      <Box bgColor={'amber.100'} borderRadius={10} borderWidth={0} >
-          <HeadingButton pb={2} pt={2} color={'black'} fontSize={16} fontWeight={'light'}>
+      <Center  bgColor={'amber.100'} borderRadius={10} borderWidth={0} >
+          <HeadingButton p={2} color={'black'} fontSize={fontzise} fontWeight={'light'}>
               O avaliador aconselha o paciente a considerar a primeira resposta que lhe vier à cabeça.
           </HeadingButton>
-      </Box>
+      </Center>
       
     );
 }
