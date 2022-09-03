@@ -1,39 +1,36 @@
 import React from 'react';
-import { Heading } from 'native-base';
+import { Heading, IHeadingProps } from 'native-base';
 
-const fontSize = 20
-const fontWeight = 'thin'
+const fontSize = 18
+const fontWeight = 'bold'
 const textAlign = 'left'
-const w = 'full'
+const w = '90%'
+const h = '80%'
+
+export function Head({...rest}: IHeadingProps) {
+    return (
+        <Heading 
+            w={w}
+            fontSize={fontSize} 
+            textAlign={textAlign} 
+            fontWeight={fontWeight}
+            {...rest} > 
+        </Heading>
+    )
+}
 
 export function Answer0() {
-    return (
-        <Heading w={w} fontSize={fontSize} textAlign={textAlign} fontWeight={fontWeight}>
-            0 - NUNCA
-        </Heading>
-    );
+    return <Head> NUNCA </Head>
 }
 
 export function Answer1() {
-    return (
-        <Heading w={w} fontSize={fontSize} textAlign={textAlign} fontWeight={fontWeight}>
-            1 - ÀS VEZES 
-        </Heading>
-    );
+    return <Head> ÀS VEZES </Head>
 }
 
 export function Answer2() {
-    return (
-        <Heading w={w}fontSize={fontSize} textAlign={textAlign} fontWeight={fontWeight}>
-            2 - FREQUENTEMENTE
-        </Heading>
-    );
+    return <Head> FREQUENTEMENTE </Head>
 }
 
 export function Answer3() {
-    return (
-        <Heading w={w} fontSize={fontSize} textAlign={textAlign} fontWeight={fontWeight}>
-            3 - QUASE SEMPRE 
-        </Heading>
-    );
+    return <Head> SEMPRE </Head>
 }

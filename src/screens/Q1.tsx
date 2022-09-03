@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Alert } from 'react-native';
-import { HStack, VStack, FlatList, Heading, Center, Radio, Box } from 'native-base';
+import { HStack, VStack, Heading, Center, Radio, IButtonProps, Box } from 'native-base';
 import { Button } from '../components/Button';
 import { useNavigation } from '@react-navigation/native';
 import { HeadingButton } from '../components/HeadingButton';
 import { Answer0, Answer1, Answer2, Answer3 } from '../components/home/choice';
 import { Ask1 } from '../components/pages/answer';
 import { AntDesign } from '@expo/vector-icons';
+
 
 export function Q1() {
 
@@ -39,82 +40,100 @@ export function Q1() {
   const bH3 = select === value3 ? 1 : 0
   const bC3 = select === value3 ? 'black' : 'white'
 
-  const handleNextPage = (pg: any) => {
-    if (!select) {
-      alert()
-    } else {
-      console.log(select)
-      navigate(pg, { res: parseInt(select) }) /* Enviando o resultado para proxima página */
-    }
+  function Never() { 
+    return <Radio size={8} value={value0} colorScheme="green"> <Answer0 /> </Radio>
+  }
+  
+  function SomeTimes() {
+    return <Radio size={8} value={value1} colorScheme="yellow" > <Answer1 /> </Radio>
+
+  }
+  function Frequence() {
+    return <Radio size={8} value={value2} colorScheme="orange"> <Answer2 /> </Radio>
+
+  }
+  function Ever() {
+    return <Radio size={8} value={value3} colorScheme="red"> <Answer3 /> </Radio>
   }
 
-  function setNunca() { 
+  const SelectRadio = ({...rest}: IButtonProps) => {
     return (
-        <Radio size={8} value={value0} colorScheme="yellow"><Answer0 /></Radio>
-    )
-  }
-  function setAsVezes() {
-    return (
-        <Radio size={8} value={value1} colorScheme="yellow" ><Answer1 /></Radio>
-    )
-  }
-  function setFrequente() {
-    return (
-        <Radio size={8} value={value2} colorScheme="yellow"><Answer2 /></Radio>
-    )
-  }
-  function setSempre() {
-    return (
-        <Radio size={8} value={value3} colorScheme="yellow"><Answer3 /></Radio>
+        <Center>
+          <Button
+            bg={setBg0} 
+            borderWidth={bH0} 
+            borderColor={bC0} 
+            variant={variant0}
+            {...rest}>
+          </Button>
+        </Center>
     )
   }
 
   const handleGoBack = () => { goBack() }
+
+  const handleNextPage = (pg: any) => {
+    if (!select) {
+      alert()
+    } 
+    else {
+      console.log(select)
+      navigate(pg, { res: parseInt(select) })
+    }
+  }
 
   const alert = () => {
     Alert.alert('Resposta necessária', 'Não é possível avançar sem responder a questão')
   }
 
   return (
-    <VStack flex={1}>
+    <VStack flex={1} >
 
       <VStack flex={1} justifyContent={'center'} alignItems={'center'}>
 
-        <HStack>
-          <Heading textAlign={'center'}> <Ask1 /> </Heading>
-        </HStack>
+        <VStack flex={1} justifyContent={'center'} >
+          <HStack mt={5}>
+            <Heading textAlign={'center'}> <Ask1 /> </Heading>
+          </HStack> 
+        </VStack>
 
-        <VStack mt={10} justifyContent={'center'} alignItems={'center'}>
+        <VStack mb={10} justifyContent={'center'} alignItems={'center'}>
           <Radio.Group name='Group 1' accessibilityLabel='Choice' value={select} onChange={setSelect}>
             <VStack p={5} space={'2xl'} >
 
-              <Center>
-                <Button  bg={setBg0} borderWidth={bH0} borderColor={bC0} variant={variant0} justifyContent={'space-between'} alignItems={'center'} >
-                    {setNunca()}
-                  </Button>
-              </Center>
+            <SelectRadio 
+                bg={setBg0} 
+                borderWidth={bH0} 
+                borderColor={bC0} 
+                variant={variant0} 
+                justifyContent={'space-between'} 
+                alignItems={'center'}> {Never()} </SelectRadio>
 
-              <Center>
-                <Button bg={setBg1} borderWidth={bH1} borderColor={bC1} variant={variant1} justifyContent={'space-between'} alignItems={'center'} >
-                  {setAsVezes()}
-                </Button>
-              </Center>
+              <SelectRadio 
+                bg={setBg1} 
+                borderWidth={bH1} 
+                borderColor={bC1} 
+                variant={variant1} 
+                justifyContent={'space-between'} 
+                alignItems={'center'}> {SomeTimes()} </SelectRadio>
 
-              <Center>
-                <Button bg={setBg2} borderWidth={bH2} borderColor={bC2} variant={variant2} justifyContent={'space-between'} alignItems={'center'} >
-                    {setFrequente()}
-                </Button>
-              </Center>
+              <SelectRadio 
+                bg={setBg2} 
+                borderWidth={bH2} 
+                borderColor={bC2} 
+                variant={variant2} 
+                justifyContent={'space-between'} 
+                alignItems={'center'}> {Frequence()} </SelectRadio>
 
-              <Center>
+              <SelectRadio 
+                bg={setBg3} 
+                borderWidth={bH3} 
+                borderColor={bC3} 
+                variant={variant3} 
+                justifyContent={'space-between'} 
+                alignItems={'center'}> {Ever()} </SelectRadio>
 
-                  <Button bg={setBg3} borderWidth={bH3} borderColor={bC3} variant={variant3} justifyContent={'space-between'} alignItems={'center'}>
-                    {setSempre()}
-                  </Button>
-
-              </Center>
-
-             </VStack>
+            </VStack>
           </Radio.Group>
         </VStack>
 
@@ -123,7 +142,6 @@ export function Q1() {
       <VStack alignItems={'center'} justifyContent={'center'} px={8} pb={5}>
         <HStack w={'50%'} justifyContent={'center'} alignItems={'center'}  >
 
-        
           <Button onPress={handleGoBack} m={3}>
             <HStack justifyContent={'space-between'} alignItems={'center'}>
                   <AntDesign name="leftcircleo" size={24} color="white" /> 
@@ -131,7 +149,6 @@ export function Q1() {
             </HStack>
           </Button>
           
-
           <Button onPress={() => handleNextPage('q2')} m={3}>
             <HStack justifyContent={'space-between'} alignItems={'center'}>
               <HeadingButton mr={8}> PROXIMO </HeadingButton>

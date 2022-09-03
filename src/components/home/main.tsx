@@ -1,6 +1,8 @@
-import { Box } from 'native-base';
+import { Box, VStack } from 'native-base';
 import React from 'react';
 import { HeadingButton } from '../HeadingButton';
+
+const w = 'full'
 
 export const MainTitle = () => {
     return (
@@ -36,14 +38,19 @@ export const MainOptionsTitle = () => {
 
 export const MainOptions = () => {
     return (
-      <Box>
-          <HeadingButton pb={2} pt={2} color={'black'} fontSize={16} fontWeight={'thin'}>
+      <VStack mb={10} mt={10}>
+
+          <HeadingButton w={w}  color={'black'} fontSize={16} fontWeight={'thin'}>
+              
               0 - NUNCA - Não se aplica a mim {'\n'}
               1 - ÀS VEZES - Aplica-se a mim em algum grau {'\n'}
               2 - FREQUENTEMENTE - Aplica-se a mim com frequencia {'\n'}
-              3 - QUASE SEMPRE- Aplica-se muito a mim {'\n'}
+              3 - QUASE SEMPRE - Aplica-se muito a mim 
+
           </HeadingButton>
-      </Box>
+
+          
+      </VStack>
     );
   }
 

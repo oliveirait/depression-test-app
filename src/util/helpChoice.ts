@@ -1,24 +1,27 @@
-const remember = [
-    {
-        "id" : "1",
-        "info": "0 - NUNCA - Não se aplica a mim de forma alguma.",
-    },
+type Props = {
+    value0: string
+    value1: string
+    value2: string
+    value3: string
 
-    {
-        "id" : "2",
-        "info": "1 - ÀS VEZES - Aplica-se a mim em algum grau.",
-    },
+    variant0: string
+    variant1: string
+    variant2: string
+    variant3: string 
 
-    {
-        "id" : "3",
-        "info": "2 - FREQUENTEMENTE - Aplica-se muito a mim."
-        
-    },
+    setBg0: boolean
+    bH0: boolean
+    bC0: boolean
 
-    {
-        "id" : "4",
-    },
+    setBg1: boolean
+    bH1: boolean
+    bC1: boolean
 
-]
+    setBg2: boolean
+    bH02: boolean
+    bC02: boolean
 
-export default remember 
+    setBg3: boolean
+    bH03: boolean
+    bC03: boolean
+}  

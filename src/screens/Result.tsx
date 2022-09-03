@@ -15,17 +15,6 @@ export function Result({route}) {
     navigate('home')
   }
 
-  const resetIndex = () => {
-    dispatch(
-      CommonActions.reset({
-        index: 0,
-        routes: [{ name: 'home' }
-        ]
-      })
-    )
-   }
-
-
   const getInfo = () => {
     if ( res > 13 ) {
       Alert.alert(
