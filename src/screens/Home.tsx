@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Center, Divider, Heading, HStack, Image, VStack } from 'native-base';
+import { Box, Center, Image, VStack } from 'native-base';
 import { Button } from '../components/Button';
 import { useNavigation } from '@react-navigation/native';
 import { HeadingButton } from '../components/HeadingButton';
@@ -7,8 +7,7 @@ import { MainTitle,
           MainInfo, 
           MainOptionsTitle, 
           MainOptions, 
-          MainAlert } from '../components/home/main'; 
-import { Loading } from '../components/Loading';
+          MainAlert } from '../components/home/main';
 
 export function Home() {
 
@@ -31,14 +30,14 @@ export function Home() {
     
         <Center flex={1} mt={'50%'} mb={'1%'}>
           <MainTitle/>
-          { !logoLoaded ? <Loading/> : <Logo/> } 
+          <Logo/>
           <MainInfo/>
           <MainOptionsTitle/>
           <MainOptions/>
           <MainAlert/>
         </Center>
 
-        <Button onPress={ () => handleNextPage('q1') } mt={'50%'}> 
+        <Button borderRadius={0} onPress={ () => handleNextPage('q1') } mt={'50%'}> 
           <HeadingButton> INICIAR TESTE </HeadingButton>
         </Button> 
 

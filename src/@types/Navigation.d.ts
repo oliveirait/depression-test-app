@@ -5,7 +5,7 @@ export declare global {
             q1: {
                 res: any;
             }
-            q2: {
+            q2 : {
                 res: any;
             }
             q3: {

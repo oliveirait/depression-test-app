@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Center, Heading, Link, VStack } from 'native-base';
+import { Button, Center, Heading, Input, Link, TextField, VStack } from 'native-base';
 import { useNavigation } from '@react-navigation/native';
 import { Alert } from 'react-native';
 import { HeadingButton } from '../components/HeadingButton';
@@ -9,7 +9,7 @@ export function Result({route}) {
 
   const { navigate, dispatch  } = useNavigation()
 
-  var [res] = useState(route.params?.res);
+  const [res] = useState(route.params?.res);
 
   const handleHomePage = () => {
     navigate('home')
@@ -63,19 +63,14 @@ export function Result({route}) {
           </Heading>
 
           <Button>
-          <Link href='https://vittude.com'>
-            
-            <Heading color={'white'}>vittude.com</Heading>
-            
-          </Link>
+            <Link href='https://vittude.com'>
+              <Heading color={'white'}>vittude.com</Heading>
+            </Link>
           </Button>
 
-          
-          
         </Center>
 
-        
-        <Button onPress={handleHomePage} size={14} w={'full'} mt={'50%'}>
+        <Button borderRadius={0} onPress={handleHomePage} size={14} w={'full'} mt={'50%'}>
           <HeadingButton > PAGINA INICIAL </HeadingButton>
         </Button>
 

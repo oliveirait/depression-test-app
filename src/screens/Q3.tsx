@@ -9,10 +9,11 @@ import { Ask3 } from '../components/pages/answer';
 import { AntDesign } from '@expo/vector-icons';
 
 
-export function Q3() {
+export function Q3({route}) {
 
   const { navigate, goBack } = useNavigation()
   const [select, setSelect] = useState('')
+  const [res] = useState(route.params?.res);
 
   const value0 = '0'
   const value1 = '1'

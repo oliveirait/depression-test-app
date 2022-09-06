@@ -9,10 +9,11 @@ import { Ask2 } from '../components/pages/answer';
 import { AntDesign } from '@expo/vector-icons';
 
 
-export function Q2() {
+export function Q2({route}) {
 
   const { navigate, goBack } = useNavigation()
   const [select, setSelect] = useState('')
+  const [res] = useState(route.params?.res);
 
   const value0 = '0'
   const value1 = '1'
@@ -149,7 +150,7 @@ export function Q2() {
             </HStack>
           </Button>
           
-          <Button onPress={() => handleNextPage('q5')} m={3}>
+          <Button onPress={() => handleNextPage('q3')} m={3}>
             <HStack justifyContent={'space-between'} alignItems={'center'}>
               <HeadingButton mr={8}> PROXIMO </HeadingButton>
               <AntDesign name="rightcircleo" size={24} color="white" />

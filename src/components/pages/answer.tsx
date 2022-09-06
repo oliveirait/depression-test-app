@@ -14,7 +14,7 @@ export function Ask1() {
 
 export function Ask2() {
     return (
-        <Heading fontSize={length}textAlign={textAlign}>
+        <Heading fontSize={length} textAlign={textAlign}>
             Tenho dificuldade de ter iniciativa própria
         </Heading>
     );
@@ -22,7 +22,7 @@ export function Ask2() {
 
 export function Ask3() {
     return (
-        <Heading fontSize={length}textAlign={textAlign}>
+        <Heading fontSize={length} textAlign={textAlign}>
             Sinto que não anseio por nada na vida
         </Heading>
     );

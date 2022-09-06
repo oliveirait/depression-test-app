@@ -9,10 +9,11 @@ import { Ask4 } from '../components/pages/answer';
 import { AntDesign } from '@expo/vector-icons';
 
 
-export function Q4() {
+export function Q4({route}) {
 
   const { navigate, goBack } = useNavigation()
   const [select, setSelect] = useState('')
+  const [res] = useState(route.params?.res);
 
   const value0 = '0'
   const value1 = '1'
