@@ -52,8 +52,6 @@ export function Result({route}) {
     }, []) 
   
 
-  
-
   return (
     <VStack flex={1} bg='white' >
 

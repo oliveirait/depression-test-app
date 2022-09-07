@@ -14,6 +14,7 @@ export function Q1() {
   const { navigate, goBack } = useNavigation()
   const [select, setSelect] = useState('')
 
+
   const value0 = '0'
   const value1 = '1'
   const value2 = '2'

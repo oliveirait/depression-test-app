@@ -19,7 +19,7 @@ export function Home() {
     return(
       <Image
         source={logoLoaded} 
-        alt={'Depression Test'}
+        alt={'Depression'}
         resizeMode={'contain'}
         size={100} />
     )
