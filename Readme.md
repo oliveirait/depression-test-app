@@ -1,3 +1,5 @@
+<img src="https://github.com/oliveirascof/depression-check/blob/main/assets/presentation/presentation.gif?raw=true"/>
+
 # Projeto
 
 Aplicação para realização de teste de depressão
