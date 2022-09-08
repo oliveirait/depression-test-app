@@ -16,17 +16,11 @@ Native Base
 ## Funcionalidades
 
 Botão para inicio de teste  
-
 Navegação entre telas  
-
-Sekeção das questões  
-
+Seleção das questões  
 Botões de avanço e retorno  
-
 Mensagem de alerta obrigatorio para prosseguir  
-
 Informação sobre o de grau de depressão  
-
 Botão de atalho para acessar site de psicólogos  
 
 
