@@ -1,7 +1,7 @@
 import React from 'react';
 import { NativeBaseProvider, StatusBar } from "native-base"; 
-import { THEME } from "./src/styles/Theme"; /* Token de cores do app */
-import { AppContainer } from "./src/routes/AppContainer"; /* Provê container do app */
+import { THEME } from "./src/styles/Theme"; 
+import { AppContainer } from "./src/routes/AppContainer";
 import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
 import { Loading } from './src/components/Loading';
 
